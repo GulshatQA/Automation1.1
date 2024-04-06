@@ -1,8 +1,8 @@
 package ru.netology.service;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Assumptions;
-import org.junit.jupiter.api.Test;
+import static org.testng.Assert.assertEquals;
+import org.testng.annotations.Test;
+
 
 public class CashBackHackerTest {
     CashBackHacker cashBackHacker = new CashBackHacker();
@@ -15,7 +15,7 @@ public class CashBackHackerTest {
         int expected = 600;
         int actual = cashBackHacker.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     //Когда сумма равна границе, expected должен быть = 0
@@ -26,7 +26,7 @@ public class CashBackHackerTest {
         int expected = 0;
         int actual = cashBackHacker.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     //Когда сумма больше границы, предлагает докупить ещё на сумму expected
@@ -37,6 +37,6 @@ public class CashBackHackerTest {
         int expected = 100;
         int actual = cashBackHacker.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 }
